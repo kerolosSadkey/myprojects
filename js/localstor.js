@@ -14,3 +14,11 @@ for(var i=0;i<localStorage.length;i++){
      
 
 }
+
+// clear locak storage after 5000 sec
+setInterval(function(){
+    
+    
+localStorage.clear();    
+
+},5000);

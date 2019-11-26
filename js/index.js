@@ -1,3 +1,27 @@
+//--------------------------------------------------
+ // josn function to store as object in local storage
+function interaction(etype,etarget,etime){
+    this.etype=etype;
+    this.etarget=etarget;
+    this.etime=etime;
+}
+//----------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------
+window.addEventListener("unload",function(eve){
+    
+          var date=new Date();
+          var obj=new interaction(eve.type,"windowunload",date.toDateString()+"-"+date.toTimeString());
+          console.log(obj.etime +obj.etype);
+          var items=[];
+          items.push(obj);
+    localStorage.setItem('unload'+(date.getDay+date.getMonth),JSON.stringify(items));
+    
+});
+
+//------------------------------------------------------------------------------------------------------------------
+
+
 window.addEventListener("load",function(eve){
      
           var date=new Date();
@@ -7,22 +31,11 @@ window.addEventListener("load",function(eve){
           items.push(obj);
     localStorage.setItem('load'+(date.getDay+date.getMonth),JSON.stringify(items));
     
-});
+
 
 //--------------------------------------------------------------------------------------------------------------
 
-window.addEventListener("unload",function(eve){
-    
-          var date=new Date();
-          var obj=new interaction(eve.type,"windowunload",date.toDateString()+"-"+date.toTimeString());
-          console.log(obj.etime)
-          var items=[];
-          items.push(obj);
-    localStorage.setItem('unload'+(date.getDay+date.getMonth),JSON.stringify(items));
-    
-});
 
-//------------------------------------------------------------------------------------------------------------------
 var selct=document.getElementById("select");
 
 // fill select option by 1:26
@@ -34,13 +47,7 @@ for(var i=0; i<26;i++){
     selct.appendChild(option);
 }
 
-//--------------------------------------------------
- // josn function to store as object in local storage
-function interaction(etype,etarget,etime){
-    this.etype=etype;
-    this.etarget=etarget;
-    this.etime=etime;
-}
+
 //------------------------------------------------------------------
 
 // make array object to letters and rout of image 
@@ -64,9 +71,9 @@ btn.addEventListener("click",function(e){
       var date=new Date();
           var obj=new interaction(e.type,"buuton aggregation select " +selct.value+" letters",date.toDateString()+"-"+date.toTimeString());
           console.log(obj.etime)
-          var items=[];
-          items.push(obj);
-    localStorage.setItem('show'+(date.getDay+date.getMonth),JSON.stringify(items));
+          var items2=[];
+          items2.push(obj);
+    localStorage.setItem('show'+(date.getDay+date.getMonth),JSON.stringify(items2));
     
     var slevalue=selct.value;
       var checkrand=new Array();
@@ -137,12 +144,14 @@ btn.addEventListener("click",function(e){
           var date=new Date();
           var obj=new interaction(ev.type,ev.target.value,date.toDateString()+"-"+date.toTimeString());
           console.log(obj.etime)
-          var items=[];
-          items.push(obj);
-          localStorage.setItem('evenletter'+ev.target.value,JSON.stringify(items));
+          var items3=[];
+          items3.push(obj);
+          localStorage.setItem('evenletter'+ev.target.value,JSON.stringify(items3));
 }));
     }
     
 });
 
+
+});    
 
