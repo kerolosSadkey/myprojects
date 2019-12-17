@@ -1,9 +1,14 @@
+<<<<<<< HEAD
+=======
+//--------------------------------------------------
+>>>>>>> 1483c21314d69d51c75fd9ddfb9bb922219ff4ff
  // josn function to store as object in local storage
 function interaction(etype,etarget,etime){
     this.etype=etype;
     this.etarget=etarget;
     this.etime=etime;
 }
+<<<<<<< HEAD
 //------------------------------------------------------------------
 var i=0;
 
@@ -31,8 +36,39 @@ window.addEventListener("load",function(eve){
 
 
 
+=======
+//----------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------
+window.addEventListener("unload",function(eve){
+    
+          var date=new Date();
+          var obj=new interaction(eve.type,"windowunload",date.toDateString()+"-"+date.toTimeString());
+          console.log(obj.etime +obj.etype);
+          var items=[];
+          items.push(obj);
+    localStorage.setItem('unload'+(date.getDay+date.getMonth),JSON.stringify(items));
+    
+});
 
 //------------------------------------------------------------------------------------------------------------------
+
+
+window.addEventListener("load",function(eve){
+     
+          var date=new Date();
+          var obj=new interaction(eve.type,"windowload",date.toDateString()+"-"+date.toTimeString());
+          console.log(obj.etime)
+          var items=[];
+          items.push(obj);
+    localStorage.setItem('load'+(date.getDay+date.getMonth),JSON.stringify(items));
+    
+>>>>>>> 1483c21314d69d51c75fd9ddfb9bb922219ff4ff
+
+
+//--------------------------------------------------------------------------------------------------------------
+
+
 var selct=document.getElementById("select");
 
 // fill select option by 1:26
@@ -44,8 +80,13 @@ for(var i=0; i<26;i++){
     selct.appendChild(option);
 }
 
+<<<<<<< HEAD
 //--------------------------------------------------
 
+=======
+
+//------------------------------------------------------------------
+>>>>>>> 1483c21314d69d51c75fd9ddfb9bb922219ff4ff
 
 // make array object to letters and rout of image 
 var letters=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -59,15 +100,21 @@ var divcontentbtn=document.getElementById("btncontent");
 
  //select option from select filed and agreegate letters 
 btn.addEventListener("click",function(e){
-    
+     
           
       var date=new Date();
        var fulldate =date.getDate()+"/"+date.getMonth()+ "/" + date.getFullYear()+ "  "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
           var obj=new interaction(e.type,"buuton aggregation select " +selct.value+" letters",fulldate);
           console.log(obj.etime)
+<<<<<<< HEAD
           var items=[];
           items.push(obj);
     localStorage.setItem('show'+(date.getDay()+date.getMonth()),JSON.stringify(items));
+=======
+          var items2=[];
+          items2.push(obj);
+    localStorage.setItem('show'+(date.getDay+date.getMonth),JSON.stringify(items2));
+>>>>>>> 1483c21314d69d51c75fd9ddfb9bb922219ff4ff
     
     var slevalue=selct.value;
       var checkrand=new Array();
@@ -116,6 +163,7 @@ btn.addEventListener("click",function(e){
         
         //event generate image by tha name of letter 
         Array.from(btnevent).forEach(v=>v.addEventListener("click",function(ev){
+            
           
            //if press button appare as frist time element (image)
          while(imgcontent.firstChild){
@@ -139,9 +187,11 @@ btn.addEventListener("click",function(e){
                var fulldate =date.getDate()+"/"+date.getMonth()+ "/" + date.getFullYear()+ "  "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
           var obj=new interaction(ev.type,ev.target.value,fulldate);
           console.log(obj.etime)
-          var items=[];
-          items.push(obj);
-          localStorage.setItem('evenletter'+ev.target.value,JSON.stringify(items));
+          var items3=[];
+          items3.push(obj);
+          localStorage.setItem('evenletter'+ev.target.value,JSON.stringify(items3));
+            
+        
 }));
     }
     
@@ -155,4 +205,6 @@ btn.addEventListener("click",function(e){
  
 //**********************************************//
 
+
+});    
 
