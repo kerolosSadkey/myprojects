@@ -66,7 +66,7 @@ var divcontentbtn=document.getElementById("btncontent");
 
  //select option from select filed and agreegate letters 
 btn.addEventListener("click",function(e){
-    
+     
           
       var date=new Date();
           var obj=new interaction(e.type,"buuton aggregation select " +selct.value+" letters",date.toDateString()+"-"+date.toTimeString());
@@ -122,6 +122,7 @@ btn.addEventListener("click",function(e){
         
         //event generate image by tha name of letter 
         Array.from(btnevent).forEach(v=>v.addEventListener("click",function(ev){
+            
           
            //if press button appare as frist time element (image)
          while(imgcontent.firstChild){
@@ -147,6 +148,8 @@ btn.addEventListener("click",function(e){
           var items3=[];
           items3.push(obj);
           localStorage.setItem('evenletter'+ev.target.value,JSON.stringify(items3));
+            
+        
 }));
     }
     
