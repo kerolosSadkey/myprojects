@@ -30,7 +30,7 @@ $.ajax({
     "success":function(response){
         
        localStorage.clear();
-          clearInterval(clearintrval); 
+         
 }
 
 });
