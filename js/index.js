@@ -1,14 +1,10 @@
-<<<<<<< HEAD
-=======
-//--------------------------------------------------
->>>>>>> 1483c21314d69d51c75fd9ddfb9bb922219ff4ff
+
  // josn function to store as object in local storage
 function interaction(etype,etarget,etime){
     this.etype=etype;
     this.etarget=etarget;
     this.etime=etime;
 }
-<<<<<<< HEAD
 //------------------------------------------------------------------
 var i=0;
 
@@ -23,33 +19,8 @@ window.addEventListener("unload",function(eve){
     
 });
 //--------------------------------------------------------------------------------------------------------------
-window.addEventListener("load",function(eve){
-     
-          var date=new Date();
-       var fulldate =date.getDate()+"/"+date.getMonth()+ "/" + date.getFullYear()+ "  "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
-          var obj=new interaction(eve.type,"windowload",fulldate);
-          var items=[];
-          items.push(obj);
-    
-    localStorage.setItem('load'+(++i),JSON.stringify(items));
-    
 
 
-
-=======
-//----------------------------------------------------------------------------------------
-
-//----------------------------------------------------------------------------------------------
-window.addEventListener("unload",function(eve){
-    
-          var date=new Date();
-          var obj=new interaction(eve.type,"windowunload",date.toDateString()+"-"+date.toTimeString());
-          console.log(obj.etime +obj.etype);
-          var items=[];
-          items.push(obj);
-    localStorage.setItem('unload'+(date.getDay+date.getMonth),JSON.stringify(items));
-    
-});
 
 //------------------------------------------------------------------------------------------------------------------
 
@@ -57,13 +28,13 @@ window.addEventListener("unload",function(eve){
 window.addEventListener("load",function(eve){
      
           var date=new Date();
-          var obj=new interaction(eve.type,"windowload",date.toDateString()+"-"+date.toTimeString());
+     var fulldate =date.getDate()+"/"+date.getMonth()+ "/" + date.getFullYear()+ "  "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
+          var obj=new interaction(eve.type,"windowload",fulldate);
           console.log(obj.etime)
           var items=[];
           items.push(obj);
     localStorage.setItem('load'+(date.getDay+date.getMonth),JSON.stringify(items));
     
->>>>>>> 1483c21314d69d51c75fd9ddfb9bb922219ff4ff
 
 
 //--------------------------------------------------------------------------------------------------------------
@@ -80,17 +51,14 @@ for(var i=0; i<26;i++){
     selct.appendChild(option);
 }
 
-<<<<<<< HEAD
 //--------------------------------------------------
 
-=======
 
-//------------------------------------------------------------------
->>>>>>> 1483c21314d69d51c75fd9ddfb9bb922219ff4ff
 
+//------------------------------------------------
 // make array object to letters and rout of image 
 var letters=["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
-var image=["../image/en1.gif",  "../image/en2.jpg", "../image/en3.gif","../image/en4.jpg",                                "../image/en5.gif", "../image/en6.gif",  "../image/en7.gif",                                                      "../image/en8.gif","../image/en9.gif", "../image/en10.gif","../image/en11.gif",                      "../image/en12.gif","../image/en13.gif","../image/en14.jpg","../image/en15.jpg","../image/en16.jpg","../image/en17.gif","../image/en18.gif","../image/en19.gif","../image/en20.gif","../image/en21.jpg", "../image/en22.jpg","../image/en23.jpg","../image/en24.gif", "../image/en25.jpg", "../image/en26.jpg"];
+var image=["image/en1.gif",  "image/en2.jpg", "image/en3.gif","image/en4.jpg",                                "image/en5.gif", "image/en6.gif",  "image/en7.gif","image/en8.gif","image/en9.gif", "image/en10.gif","image/en11.gif",                      "image/en12.gif","image/en13.gif","image/en14.jpg","image/en15.jpg","image/en16.jpg","image/en17.gif","image/en18.gif","image/en19.gif","image/en20.gif","image/en21.jpg", "image/en22.jpg","image/en23.jpg","image/en24.gif", "image/en25.jpg", "image/en26.jpg"];
 //------------------------------------------------------------------------------
 
 var btn=document.getElementById("btn");
@@ -106,15 +74,15 @@ btn.addEventListener("click",function(e){
        var fulldate =date.getDate()+"/"+date.getMonth()+ "/" + date.getFullYear()+ "  "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
           var obj=new interaction(e.type,"buuton aggregation select " +selct.value+" letters",fulldate);
           console.log(obj.etime)
-<<<<<<< HEAD
+
           var items=[];
           items.push(obj);
     localStorage.setItem('show'+(date.getDay()+date.getMonth()),JSON.stringify(items));
-=======
+
           var items2=[];
           items2.push(obj);
     localStorage.setItem('show'+(date.getDay+date.getMonth),JSON.stringify(items2));
->>>>>>> 1483c21314d69d51c75fd9ddfb9bb922219ff4ff
+
     
     var slevalue=selct.value;
       var checkrand=new Array();
@@ -206,5 +174,5 @@ btn.addEventListener("click",function(e){
 //**********************************************//
 
 
-});    
+    
 

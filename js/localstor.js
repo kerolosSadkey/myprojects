@@ -14,9 +14,8 @@ for(var i=0;i<localStorage.length;i++){
      
 
 }
-<<<<<<< HEAD
 */
-=======
+
 
 // clear locak storage after 5000 sec
 setInterval(function(){
@@ -25,4 +24,4 @@ setInterval(function(){
 localStorage.clear();    
 
 },5000);
->>>>>>> 1483c21314d69d51c75fd9ddfb9bb922219ff4ff
+
